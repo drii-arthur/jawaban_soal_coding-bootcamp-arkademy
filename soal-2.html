@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form Falidasi</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="info"></div>
+    <input type="text" id="password" placeholder="password">
+    <button class="btn-primary" onclick="formValidasi()"> Submit</button>
+</body>
+<script type="text/javascript">
+
+    function formValidasi() {
+        var pw = document.getElementById("password").value; //mengambil nilai yang di input di kolom password
+        // inputan hanya berupa angka, dan huruf kecil
+
+        // membuat pengkondisian
+
+        // untuk mengecek nilai yang di masukan
+        // mencetak pesan error jika nilai yang di masukan kurang dari jumlah yang di tentukan
+        if (pw.length < 8) {
+            document.getElementById('info').innerHTML = "password minimal 8 karakter"
+        }
+        else if (pw.match(/[^a-z0-9]/g)) { // untuk mengecek jika nilai password bukan angka dan huruf kecil
+            document.getElementById('info').innerHTML = "password harus mengandung angka dan huruf kecil"
+        }
+        else {
+            alert("password oke !")
+        }
+    }
+
+</script>
+
+</html>
